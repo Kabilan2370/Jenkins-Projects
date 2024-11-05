@@ -4,7 +4,7 @@
 
 - Create a new pipeline project
 
-  ![image](Build_docker_image_and_push/Screeshot/1.png)Build_docker_image_and_push/Screeshot
+  ![image](./Build_docker_image_and_push/Screeshot/1.png)Build_docker_image_and_push/Screeshot
 
 - Add the souce code details of github repository, branch and credentials...
 
