@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Check dockerfile on github') {
+            steps {
+                git branch: 'main', url: 'https://github.com/Kabilan2370/Check.git'
+            }
+        }
+        
+        stage('Build docker image') {
+            steps {
+                sh 'sudo docker build -t kabilan2003/not:2.8 .'
+                
+            }
+        }
+        stage('Push a docker image') {
+            
+            steps {
+                withCredentials([usernamePassword(credentialsId: 'c3b1745e-cb0d-4e6d-9875-300398cee378', passwordVariable: 'dockerpwd', usernameVariable: 'dockerun')]) {
+                sh ('docker login -u ${dockerun} -p ${dockerpwd}')
+}
+                sh 'docker push kabilan2003/not:2.8'
+            }
+        }
+    }
+}
