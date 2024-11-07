@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Maven file from github') {
+            steps {
+                git branch: 'main', url: 'https://github.com/Kabilan2370/my-app.git'
+            }
+        }
+        stage('mvn version') {
+            steps {
+                sh 'mvn --version'
+            }
+        }
+        stage('Build a maven') {
+            steps {
+                sh 'mvn package'
+            }
+        }
+    }
+}
