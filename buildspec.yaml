@@ -29,6 +29,6 @@ phases:
   post_build:
     commands:
       - echo Pushing Docker image...
-      - docker push $REPO:$TAG
+      - docker push $REPO
 artifacts:
   files: []
