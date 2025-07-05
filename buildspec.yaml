@@ -1,9 +1,9 @@
 version: 0.2
 
 env:
-      variables:
-        REPO: 339713165486.dkr.ecr.us-east-1.amazonaws.com/docker:latest
-        TAG: latest
+  variables:
+    REPO: 339713165486.dkr.ecr.us-east-1.amazonaws.com/docker:latest
+    TAG: latest
 
 phases:
   # install:
