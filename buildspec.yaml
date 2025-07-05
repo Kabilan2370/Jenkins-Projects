@@ -24,7 +24,7 @@ phases:
   build:
     commands:
       - echo Building Docker image...
-      - docker build -t $REPO:$TAG ./Build_docker_image_and_push
+      - docker build -t $REPO:$TAG ./Build_docker_image_and_push || cat ./Build_docker_image_and_push/dockerfile
 
   post_build:
     commands:
