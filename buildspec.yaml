@@ -1,13 +1,13 @@
 version: 0.2
 
 phases:
-  install:
-    commands:
-      - echo "Updating packages"
-      - apt-get update -y
-      - apt-get install -y docker.io
-      - systemctl start docker
-      - docker --version
+  # install:
+  #   commands:
+  #     - echo "Updating packages"
+  #     - apt-get update -y
+  #     - apt-get install -y docker.io
+  #     - systemctl start docker
+  #     - docker --version
       
   pre_build:
     commands:
