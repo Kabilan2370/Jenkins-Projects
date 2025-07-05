@@ -25,11 +25,12 @@ phases:
   build:
     commands:
       - echo Building Docker image...
-      - docker build -t $REPO:$TAG ./Build_docker_image_and_push || cat ./Build_docker_image_and_push/dockerfile
+      - docker build -t $REPO:$TAG ./Build_docker_image_and_push || cat ./Build_docker_image_and_push/Dockerfile
 
   post_build:
     commands:
       - echo Pushing Docker image...
+      - docker images
       - docker push $REPO:$TAG
 artifacts:
   files: []
