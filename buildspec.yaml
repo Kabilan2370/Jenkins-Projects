@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - aws --version
+      - $(aws ecr get-login-password --region us-east-1 | sudo docker login --username AWS --password-stdin 339713165486.dkr.ecr.us-east-1.amazonaws.com)
+      - REPO=339713165486.dkr.ecr.us-east-1.amazonaws.com/docker:latest
+      - TAG=latest
+  build:
+    commands:
+      - echo Building Docker image...
+      - sudo docker build -t $REPO:$TAG ./Build_docker_image_and_push
+
+  post_build:
+    commands:
+      - echo Pushing Docker image...
+      - sudo docker push $REPO:$TAG
+artifacts:
+  files: []
