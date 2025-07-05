@@ -14,8 +14,8 @@ phases:
       - echo Logging in to Amazon ECR...
       - aws --version
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 339713165486.dkr.ecr.us-east-1.amazonaws.com
-      - REPO=339713165486.dkr.ecr.us-east-1.amazonaws.com/docker:latest
-      - TAG=latest
+      - REPO: 339713165486.dkr.ecr.us-east-1.amazonaws.com/docker:latest
+      - TAG: latest
   build:
     commands:
       - echo Building Docker image...
